@@ -6,14 +6,4 @@ This repository provides TensorFlow source code for building and training credit
 
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
-
 If you would like to see the detailed LICENSE click [here](LICENSE).
-
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
