@@ -1,8 +1,32 @@
-## The dataset used in this repo can be found here:  https://github.com/IBM/TabFormer/tree/main/data/credit_card
-
 ## Scope
 
-This repository provides TensorFlow source code for building and training credit card fraud models using an LSTM and a GRU.  The saved models were converted to the ONNX format and are also included.
+This repository provides TensorFlow source code for building and training credit card fraud models using an LSTM and a GRU.
+
+## Summary
+The models included in this repository are multi-layer LSTM or GRU models that analyze time series data to predict whether a credit card transaction is fraudulent.
+
+The models consist of a recurrent neural network (RNN) with 2 layers of long short-term memory (LSTM) or gated recurrent unit (GRU), 200 units in each layer, followed by a dense layer.  There is one output, which is Fraud/Non-fraud.  A sequence of 7 transactions is used as the input to model. 
+
+In a transactional environment such as z/OS CICS, new data is generated from card terminal transactions.  The transaction is received by a z/OS application that then must process it.  As part of this processing, validation occurs.  This can include the use of AI to provide insight on whether the transaction is potentially fraudulent.
+
+The TensorFlow saved models were converted to the ONNX format using the tf2onnx 1.10.0 library and are also included in this repo.  The models were converted using the following template:
+```
+import tf2onnx
+spec = (tf.TensorSpec((7, 16, 220), tf.float32, name="input"),)
+output_path = new_model.name + ".onnx"
+onnx_model = tf2onnx.convert.from_keras(new_model, spec, output_path=output_path)
+```
+## Environment:
+- s390x
+- python version 3.6.9
+- pandas version 1.0.1
+- numpy version 1.16.2
+- scikit-learn version 0.22.1
+- sklearn-pandas version 1.8.0
+- TensorFlow version 2.1.0
+
+## The dataset used in this repo can be found here:  
+https://github.com/IBM/TabFormer/tree/main/data/credit_card
 
 ## License
 
