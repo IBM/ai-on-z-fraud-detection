@@ -18,12 +18,12 @@ onnx_model = tf2onnx.convert.from_keras(new_model, spec, output_path=output_path
 ```
 ## Environment:
 - s390x
-- python version 3.6.9
-- pandas version 1.0.1
-- numpy version 1.16.2
-- scikit-learn version 0.22.1
-- sklearn-pandas version 1.8.0
-- TensorFlow version 2.1.0
+- python version 3.10.6
+- pandas version 1.4.3
+- numpy version 1.24.4
+- scikit-learn version 1.22
+- sklearn-pandas version 2.2.0
+- TensorFlow version 2.9.3
 
 ## The dataset used in this repo can be found here:  
 https://github.com/IBM/TabFormer/tree/main/data/credit_card
