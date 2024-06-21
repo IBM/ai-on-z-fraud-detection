@@ -1,0 +1,7 @@
+#Python 3.11.6
+pandas==1.5.3
+numpy==1.24.3
+scikit-learn==1.2.2
+sklearn-pandas==2.2.0
+tensorflow==2.12.1
+tf2onnx=1.16.1
